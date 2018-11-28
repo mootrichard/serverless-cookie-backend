@@ -1,7 +1,6 @@
 # Serverless Charge Backend (AWS Lambda & API Gateway) Quick Start
 
 ## Assumptions and prerequisites
-_____
 This quick start guide makes the following assumptions:
 - You are familiar with using AWS Lambda & AWS API Gateway, and have an [active AWS account](https://aws.amazon.com/).
 - You have a Square account enabled for payment processing. If you have not enabled payment processing on your account (or you are not sure), visit [squareup.com/activate](squareup.com/activate).
