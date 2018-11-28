@@ -1,0 +1,16 @@
+{
+  "name": "sandbox-payments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zipFiles": "zip -r chargeForCookie.zip *"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "square-connect": "^2.20180918.1"
+  }
+}
