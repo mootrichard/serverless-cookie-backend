@@ -44,9 +44,45 @@ exports.handler = async (event) => {
     delete e.response.req.headers;
     delete e.response.req._header;
     console.log(e);
-    return {
-      "statusCode": 400,
-      "body": e.response.text
+    const errorMessages = (JSON.parse(e.response.text)).errors;
+    console.log(errorMessages);
+
+    switch(errorMessages[0].code) {
+        case "VERIFY_CVV_FAILURE":
+          return {
+            "statusCode": 400,
+            "body": JSON.stringify({
+              errorMessage: "Invalid CVV. Please re-enter card information."
+            })
+          }
+        case "VERIFY_AVS_FAILURE":
+          return {
+            "statusCode": 400,
+            "body": JSON.stringify({
+              errorMessage: "Invalid Postal Code. Please re-enter card information."
+            })
+          }
+        case "INVALID_EXPIRATION":
+          return {
+            "statusCode": 400,
+            "body": JSON.stringify({
+              errorMessage: "Card declined."
+            })
+          }
+        case "CARD_TOKEN_USED":
+          return {
+            "statusCode": 400,
+            "body": JSON.stringify({
+              errorMessage: "Card token already used; Please try re-entering card details."
+            })
+          }
+        default:
+          return {
+            "statusCode": 400,
+            "body": JSON.stringify({
+              errorMessage: "Payment error. Please contact support if issue persists."
+            })
+          }
     }
   }
 };
