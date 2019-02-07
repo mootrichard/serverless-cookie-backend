@@ -8,7 +8,7 @@ This quick start guide makes the following assumptions:
 - You have NodeJS installed on your local system.
 
 ## Before you start
-Clone this repo (if you have not already): [https://github.com/mootrichard/serverless-backend-quick-start](https://github.com/mootrichard/serverless-backend-quick-start)
+[Clone this repo](/../../) (if you have not already).
 
 ## Step 1: Run Installation Script
 Run `npm install` in the same directory where you cloned this repo.
